@@ -79,3 +79,14 @@ ul {
   flex-wrap: wrap;
   gap: 24px;
 }
+
+.boxes-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 44px;
+  border-radius: 8px;
+  padding: 32px;
+  background-color: #f6f6fe;
+}
