@@ -9,14 +9,23 @@ const refs = {
   btnCreateElem: document.querySelector('button'),
   btnDestroyElem: document.querySelector('[data-destroy]'),
   divBoxElem: document.querySelector('#boxes'),
+  divBoxControlElem: document.querySelector('#controls'),
 };
+
+refs.divBoxControlElem.classList.add('controls-container');
+refs.inputElem.classList.add('input');
+refs.btnCreateElem.classList.add('btn');
+refs.btnDestroyElem.classList.add('btn');
+refs.btnDestroyElem.classList.add('destroy-btn');
 
 refs.btnCreateElem.addEventListener('click', onBtnCreateClick);
 refs.btnDestroyElem.addEventListener('click', onBtnDestroyClick);
 
 function onBtnDestroyClick(event) {
   destroyBoxes();
+  console.log(refs.inputElem.value);
   refs.divBoxElem.classList.remove('boxes-container');
+  location.reload();
 }
 
 function onBtnCreateClick(event) {
@@ -24,7 +33,7 @@ function onBtnCreateClick(event) {
     amount = refs.inputElem.value;
   }
   createBoxes(amount);
-  if (refs.inputElem.value !== '') {
+  if (refs.inputElem.value !== '' && refs.inputElem.value <= 100) {
     refs.divBoxElem.classList.add('boxes-container');
   }
   refs.inputElem.value = '';

@@ -11,3 +11,5 @@ function onInputElemChange(event) {
     spanElem.textContent = name;
   }
 }
+
+inputElem.classList.add('name-input');

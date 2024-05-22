@@ -12,3 +12,18 @@ function onFormElemSubmit(event) {
   console.log(formData);
   formElem.reset();
 }
+
+const labelsElem = document.querySelectorAll('label');
+console.log(labelsElem);
+labelsElem.forEach(elem => {
+  elem.classList.add('label');
+});
+
+const inputsElem = document.querySelectorAll('input');
+console.log(inputsElem);
+inputsElem.forEach(elem => {
+  elem.classList.add('input-log-form');
+});
+
+const btnElem = document.querySelector('button');
+btnElem.classList.add('log-btn');

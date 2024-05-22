@@ -14,3 +14,6 @@ function onBtnElemClick(event) {
   bodyElem.style.backgroundColor = getRandomHexColor();
   spanElem.textContent = getRandomHexColor();
 }
+
+const colorTextElem = document.querySelector('.widget > p');
+colorTextElem.classList.add('text-color');
