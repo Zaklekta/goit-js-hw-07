@@ -23,17 +23,19 @@ refs.btnDestroyElem.addEventListener('click', onBtnDestroyClick);
 
 function onBtnDestroyClick(event) {
   destroyBoxes();
-  console.log(refs.inputElem.value);
   refs.divBoxElem.classList.remove('boxes-container');
-  location.reload();
 }
 
 function onBtnCreateClick(event) {
   if (refs.inputElem.value >= 1 && refs.inputElem.value <= 100) {
     amount = refs.inputElem.value;
+    createBoxes(amount);
   }
-  createBoxes(amount);
-  if (refs.inputElem.value !== '' && refs.inputElem.value <= 100) {
+  if (
+    refs.inputElem.value !== '' &&
+    refs.inputElem.value > 0 &&
+    refs.inputElem.value <= 100
+  ) {
     refs.divBoxElem.classList.add('boxes-container');
   }
   refs.inputElem.value = '';
